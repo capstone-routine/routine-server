@@ -10,11 +10,12 @@ const port = 3000;
 app.use(
   cors({
     origin: [
-      "https://capstone-routine.github.io", // Server URL (no trailing slash)
-      "https://shinmilli.github.io", // Frontend URL
-      "http://localhost:3001", // For local development
+      "https://capstone-routine.github.io/routine-server/",  //
+      "https://shinmilli.github.io/", //frontend
+      "http://localhost:3000",
     ],
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
     optionsSuccessStatus: 204,
     credentials: true,
   })
