@@ -7,12 +7,29 @@ const port = 3000;
 
 
 // CORS 설정
+const cors = require("cors");
+app.use(
+  cors({
+    origin: [
+      "https://capstone-routine.github.io/routine-server/",
+      "https://shinmilli.github.io/",
+      "http://localhost:3001",
+    ],
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    credentials: true,
+  })
+);
+
+{/* 
 app.use(cors({
     origin: 'http://localhost:3001', // 클라이언트 도메인
     methods: ['GET', 'POST', 'DELETE', 'PUT'], // 허용할 메소드
     allowedHeaders: ['Content-Type'],
     credentials: true // 클라이언트 쿠키 허용
 }));
+*/}
 
 app.use(express.json()); // JSON 형식의 요청 본문 파싱
 
