@@ -24,7 +24,7 @@ app.use(
 */}
  
 app.use(cors({
-    origin: ['http://localhost:3001'], // 클라이언트 도메인
+    origin: ['https://shinmilli.github.io'], // 클라이언트 도메인 //http://localhost:3001
     methods: ['GET', 'POST', 'DELETE', 'PUT'], // 허용할 메소드
     allowedHeaders: ['Content-Type'],
     credentials: true // 클라이언트 쿠키 허용
