@@ -7,7 +7,6 @@ const port = 3000;
 
 
 // CORS 설정
-const cors = require("cors");
 app.use(
   cors({
     origin: [
