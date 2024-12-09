@@ -3,10 +3,11 @@ const cors = require('cors');
 const db = require('./db'); // 모듈화된 DB 연결 코드 가져오기
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 
 // CORS 설정
+{/*
 app.use(
   cors({
     origin: [
@@ -20,15 +21,15 @@ app.use(
     credentials: true,
   })
 );
-
-{/* 
+*/}
+ 
 app.use(cors({
     origin: 'http://localhost:3001', // 클라이언트 도메인
     methods: ['GET', 'POST', 'DELETE', 'PUT'], // 허용할 메소드
     allowedHeaders: ['Content-Type'],
     credentials: true // 클라이언트 쿠키 허용
 }));
-*/}
+
 
 app.use(express.json()); // JSON 형식의 요청 본문 파싱
 
@@ -55,6 +56,6 @@ app.get('/api/users', (req, res) => {
 });
 
 // 서버 실행
-app.listen(port, '0.0.0.0', () => {
-    console.log(`서버가 http://localhost:${port} 에서 실행 중입니다.`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`서버가 http://localhost:${PORT} 에서 실행 중입니다.`);
 });
